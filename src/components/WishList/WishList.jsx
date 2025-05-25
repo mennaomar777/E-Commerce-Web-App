@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import style from './WishList.module.css';
+import style from './Wishlist.module.css';
 import { wishListContext } from '../../Context/wishListContext';
 import { Link } from 'react-router-dom';
 import { FadeLoader } from 'react-spinners';
