@@ -1,5 +1,6 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState,useContext } from "react";
+import { UserContext } from "./userContext";
 
 export let cartContext = createContext();
 
@@ -7,6 +8,7 @@ export let cartContext = createContext();
 export default function CartContextProvider({children}){
       const [cartId, setcartId] = useState(null)
       const [cart, setcart] = useState(null)
+      const { token } = useContext(UserContext)
        let headers = {
             token:localStorage.getItem('userToken')
         }
@@ -51,6 +53,11 @@ export default function CartContextProvider({children}){
       getCart()    
      }, [])
      
+       useEffect(() => {
+        if (token) {
+            getLoggedUserCart();
+        }
+    }, [token]);
       
     return <cartContext.Provider value={{cart,setcart,cartId,getLoggedUserCart,addProductToCart,updateCartItemCount,deleteProductItem,deleteCartItems}}>
          {children}
