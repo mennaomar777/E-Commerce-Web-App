@@ -214,9 +214,9 @@ export default function ProductDetails() {
         </div>
       </div>
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
           {relProducts.map((product) => (
-            <div className="px-4" key={product.id}>
+            <div className="px-4 " key={product.id}>
               <div className="product py-4 rounded-md px-4 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500">
                 <Link to={`/ProductDetails/${product.id}/${product.category.name}`}>
                   <img src={product.imageCover} alt={product.title} className="w-full" />
@@ -241,7 +241,7 @@ export default function ProductDetails() {
                   </button>
                   <div className="flex items-center">
                     <i
-                      className={`fa-solid fa-heart ps-2 cursor-pointer text-3xl transition-colors duration-300 ${likedProducts[product._id] ? 'text-red-600' : 'text-gray-900'}`}
+                      className={`fa-solid fa-heart ps-2 cursor-pointer text-xl transition-colors duration-300 ${likedProducts[product._id] ? 'text-red-600' : 'text-gray-900'}`}
                       onClick={() => toggleWishList(product._id)}
                     ></i>
                     {heartLoading && currentProductId === product._id && (
