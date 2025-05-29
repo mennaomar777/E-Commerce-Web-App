@@ -4,7 +4,10 @@
 }
 
 .btn{
-    @apply px-4 py-2 w-[100%] rounded-lg text-white bg-green-500 cursor-pointer
+    @apply px-4 py-2 w-[100%] rounded-lg text-white bg-green-500 cursor-pointer 
+}
+.btn:hover{
+    @apply bg-green-600;
 }
 .btn1{
     @apply px-4 py-2  rounded-lg text-white bg-green-500 cursor-pointer hover:bg-green-600 hover:text-white transition-all
@@ -78,4 +81,7 @@ nav a:hover{
 }
 nav a{
     color: rgb(92, 105, 120);
+}
+button{
+    cursor: pointer;
 }
