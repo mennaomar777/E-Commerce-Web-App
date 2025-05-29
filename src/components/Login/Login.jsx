@@ -28,8 +28,10 @@ export default function Login() {
       console.log(response.data);
       
       if(response.data.message==='success'){
-        settoken(response.data.token)
-        localStorage.setItem('userToken',response.data.token)
+        settoken(response.data.token);
+        localStorage.setItem('userToken',response.data.token);
+        getLoggedUserCart()
+        getLoggedUserWishList()
         navigate('/')
       }
     })
