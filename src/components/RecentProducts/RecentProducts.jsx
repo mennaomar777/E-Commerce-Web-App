@@ -152,7 +152,7 @@ export default function RecentProducts() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6">
           {filteredProducts.map((product, index) => (
             <div className="px-4" key={index}>
-              <div className="product py-4 rounded-md px-4 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500">
+              <div className="product py-4 rounded-md px-4 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500 shadow">
                 <Link to={`/ProductDetails/${product._id}/${product.category.name}`}>
                   <img src={product.imageCover} alt={product.title} className="w-full" />
                   <span className="block text-green-600 font-light">{product.category.name}</span>
