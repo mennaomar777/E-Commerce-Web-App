@@ -22,7 +22,7 @@ export default function Navbar() {
     <>
      <nav className='bg-slate-100 items-center lg:fixed top-0 left-0 right-0 z-50'>
         <div className="container flex mx-auto justify-between flex-col lg:flex-row py-2">
-            <div className='flex flex-col lg:flex-row  ms-10 items-center'>
+            <div className='flex flex-col lg:flex-row  ms-10 items-center justify-between'>
               <div className="flex items-center">
                 <img src = {logo} alt="fresh-cart logo" width={140} className='me-4'/>
                 <button
@@ -46,14 +46,16 @@ export default function Navbar() {
           </button>
               </div>
               <div className={`w-full lg:flex lg:w-auto ${menuOpen ? 'block' : 'hidden'}`}>
-               {token? <><ul className='flex flex-col lg:flex-row items-center'>
+               {token? <><div className='flex justify-center w-full mx-auto lg:px-40'>
+                <ul className='flex flex-col lg:flex-row items-center justify-center mx-auto'>
                     <li className='py-2'><NavLink to = '' className='mx-2 text-large'>Home</NavLink></li>
                     <li className='py-2'><NavLink to = 'Cart' className='mx-2 text-large'>Cart</NavLink></li>
                     <li className='py-2'><NavLink to = 'WishList' className='mx-2 text-large'>Wish-List</NavLink></li>
                     <li className='py-2'><NavLink to = 'Products' className='mx-2 text-large'>Products</NavLink></li>
                     <li className='py-2'><NavLink to = 'Categories' className='mx-2 text-large'>Categories</NavLink></li>
                     <li className='py-2'><NavLink to = 'Brands' className='mx-2 text-large'>Brands</NavLink></li>
-                </ul></> :null}
+                </ul>
+                </div></> :null}
               </div>
                
 
@@ -69,9 +71,6 @@ export default function Navbar() {
                     <li className='items-center'>
                         <i className="fab fa-instagram mx-2"></i>
                         <i className='fab fa-facebook mx-2'></i>
-                        <i className='fab fa-tiktok mx-2'></i>
-                        <i className='fab fa-twitter mx-2'></i>
-                        <i className='fab fa-linkedin mx-2'></i>
                         <i className='fab fa-youtube mx-2'></i>
                     </li>
                     {token? <li className='py-2' onClick={logout}><span className="text-slate-500 text-lg mx-2 cursor-pointer ">SignOut</span></li>:<><li className='py-2'><NavLink to="Login" className="text-slate-500 text-lg mx-2">Login</NavLink></li>
@@ -82,3 +81,4 @@ export default function Navbar() {
     </nav></>
   )
 }
+
