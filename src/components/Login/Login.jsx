@@ -30,9 +30,9 @@ export default function Login() {
       if(response.data.message==='success'){
         settoken(response.data.token);
         localStorage.setItem('userToken',response.data.token);
+        navigate('/')
         getLoggedUserCart()
         getLoggedUserWishList()
-        navigate('/')
       }
     })
     .catch((apiResponse)=>{
