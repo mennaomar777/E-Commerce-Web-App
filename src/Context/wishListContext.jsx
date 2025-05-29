@@ -1,5 +1,7 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState,useContext } from "react";
+import { UserContext } from "./userContext";
+
 
 export let wishListContext = createContext();
 
@@ -9,7 +11,8 @@ export default function WishListContextProvider({children}){
         token:localStorage.getItem('userToken')
     }
     const [wishListId, setWishListId] = useState(null);
-    const [wishList, setWishList] = useState(null)
+    const [wishList, setWishList] = useState(null);
+    const { token } = useContext(UserContext)
 
 
 
@@ -36,6 +39,11 @@ export default function WishListContextProvider({children}){
         .catch((err)=>err)
       }  
 
+       useEffect(() => {
+        if (token) {
+            getLoggedUserWishList();
+        }
+    }, [token]);
 
      return <wishListContext.Provider value={{wishListId,wishList,setWishList,getLoggedUserWishList,addProductToWishList,deleteWishListItem}}>
              {children}
