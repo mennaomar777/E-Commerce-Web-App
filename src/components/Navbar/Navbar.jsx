@@ -47,7 +47,7 @@ export default function Navbar() {
               </div>
               <div className={`w-full lg:flex lg:w-auto ${menuOpen ? 'block' : 'hidden'}`}>
                {token? <><div className='flex justify-center w-full mx-auto lg:px-40'>
-                <ul className='flex flex-col lg:flex-row items-center justify-center mx-auto'>
+                <ul className='flex flex-col lg:flex-row items-center justify-center mx-auto lg:ps-6'>
                     <li className='py-2'><NavLink to = '' className='mx-2 text-large'>Home</NavLink></li>
                     <li className='py-2'><NavLink to = 'Cart' className='mx-2 text-large'>Cart</NavLink></li>
                     <li className='py-2'><NavLink to = 'WishList' className='mx-2 text-large'>Wish-List</NavLink></li>
