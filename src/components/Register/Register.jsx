@@ -59,7 +59,7 @@ export default function Register() {
   })
   return (
     <>
-    <div className='max-w-xl py-6 mx-auto max-w-lg'>
+    <div className='max-w-xl py-6 mx-auto'>
     {apiError? <div className="flex items-center p-4 mb-4 text-sm  border rounded-lg bg-red-100 text-red-600 border-red-300" role="alert">
         
         <span className="sr-only">Info</span>
