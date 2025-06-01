@@ -57,7 +57,7 @@ export default function Brands() {
       <div className=" text-center grid md:grid-cols-4 gap-6 sm:grid-cols-1 ">
         {brands.map((brand)=>{
            return (
-           <div onClick={() =>{ setIsModalOpen(true) ; getSelectedBrand(brand._id)}} className='border border-gray-300 rounded-md py-5 px-2 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500'>
+           <div onClick={() =>{ setIsModalOpen(true) ; getSelectedBrand(brand._id)}} className='border border-gray-300 rounded-md py-5 px-2 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500 cursor-pointer'>
              <img src={brand.image} alt="grand-image" />
              <h2 className='py-3'>{brand.name}</h2>
           </div>
