@@ -66,7 +66,7 @@ export default function Categories() {
      getAllCategories();
    }, [])
 
-   if (isCategoriesLoading) {
+   if (isCategoriesLoading || isSubCategoriesLoading) {
     return (
       <div className='fixed inset-0 flex justify-center items-center bg-black/50 z-50'>
          <FadeLoader color='green' />
@@ -82,7 +82,7 @@ export default function Categories() {
        {categories.map((category)=>{
         return(
           <>
-           <div onClick={()=>{setSelectedCategory(category);getSubCategories(category._id)}} className='border border-gray-300 rounded-md  hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500'>
+           <div onClick={()=>{setSelectedCategory(category);getSubCategories(category._id)}} className='cursor-pointer border border-gray-300 rounded-md  hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500'>
           <div className='w-full h-[305px] overflow-hidden '>
             <img src={category.image} alt="category-image" className='w-full h-full object-cover object-center rounded-md' />
           </div>
@@ -111,7 +111,7 @@ export default function Categories() {
         onClick={() => {
           getSpecificSubCategories(subCategory._id);
         }}
-        className='text-center border border-gray-200 py-4 rounded-md px-4 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500'
+        className='cursor-pointer text-center border border-gray-200 py-4 rounded-md px-4 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500'
       >
         <h3 className='font-semibold text-2xl'>{subCategory.name}</h3>
       </div>
