@@ -152,7 +152,7 @@ export default function RecentProducts() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6">
           {filteredProducts.map((product, index) => (
             <div className="px-4" key={index}>
-              <div className="product py-4 rounded-md px-4 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500 shadow">
+              <div className="relative product py-4 rounded-md px-4 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500 shadow">
                 <Link to={`/ProductDetails/${product._id}/${product.category.name}`}>
                   <img src={product.imageCover} alt={product.title} className="w-full" />
                   <span className="block text-green-600 font-light">{product.category.name}</span>
@@ -160,11 +160,15 @@ export default function RecentProducts() {
                     {product.title.split(' ').slice(0, 2).join(' ')}
                   </h3>
                   <div className="flex justify-between items-center">
-                    <span>{product.price} EGP</span>
+                    {product.priceAfterDiscount?<div>
+                      <span className='line-through text-red-600 text-xs me-2'>{product.price} EGP</span>
+                      <span>{product.priceAfterDiscount} EGP</span>
+                    </div> : <span>{product.price} EGP</span>} 
                     <span className="text-black">
                       <i className="fas fa-star text-yellow-500"></i> {product.ratingsAverage}
                     </span>
                   </div>
+                   {product.priceAfterDiscount?<span className='absolute m-1 top-0 bg-red-600 text-white end-0 px-2 py-2 rounded-md'>Sale</span>:null}
                 </Link>
                 <div className="flex justify-between items-center">
                   <button className="btn" onClick={() => addProduct(product._id)}>
