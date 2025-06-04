@@ -184,7 +184,10 @@ export default function ProductDetails() {
             <h1 className="text-[29px] font-bold text-black">{productDetails?.title}</h1>
             <p className="text-gray-800 font-light mt-4">{productDetails?.description}</p>
             <div className="flex justify-between items-center my-3">
-              <span className="">{productDetails?.price} EGP</span>
+              {productDetails?.priceAfterDiscount?<div>
+                      <span className='line-through text-red-600 text-sm me-2'>{productDetails.price} EGP</span>
+                      <span>{productDetails.priceAfterDiscount} EGP</span>
+                    </div> : <span>{productDetails.price} EGP</span>} 
               <span className="text-black">
                 <i className="fas fa-star text-yellow-500"></i> {productDetails?.ratingsAverage}
               </span>
