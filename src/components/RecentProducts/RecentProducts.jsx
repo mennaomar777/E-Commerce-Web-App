@@ -145,7 +145,7 @@ export default function RecentProducts() {
          placeholder="Search products..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className=" w-[60%] p-3 rounded-xl border border-gray-300 shadow-sm text-gray-700 placeholder-gray-400 transition duration-300 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent hover:shadow-md "
+        className=" w-[60%] p-3 rounded-xl border border-gray-300 shadow-sm text-black placeholder-gray-400 transition duration-300 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent hover:shadow-md "
         />
       </div>
 
