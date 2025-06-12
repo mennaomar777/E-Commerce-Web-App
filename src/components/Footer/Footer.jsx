@@ -14,6 +14,7 @@ export default function Footer() {
         />
      </div>
 
+        
         <div className=''>
            <button className='bg-green-500 text-white rounded px-4 py-1 w-full sm:w-auto text-center cursor-pointer hover:bg-green-600 transition'>ShareApp Link</button>
         </div>
