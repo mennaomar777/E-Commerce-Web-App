@@ -85,3 +85,6 @@ nav a{
 button{
     cursor: pointer;
 }
+input{
+    color: black !important;
+}
