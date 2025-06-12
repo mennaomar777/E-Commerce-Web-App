@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './Footer.module.css'
+import { FaAmazonPay, FaCcAmex, FaCcMastercard, FaPaypal, FaApple, FaGooglePlay } from 'react-icons/fa';
 export default function Footer() {
   return (
     <>
@@ -20,12 +21,36 @@ export default function Footer() {
       </div>
       <hr className='border border-slate-300 my-4'/>
       <div className='flex flex-col md:flex-row justify-between items-center gap-4 pt-2'>
-        <div className=' text-center md:text-left'>
+        <div className='text-center md:text-left flex items-center gap-2'>
         <h3 className='font-light text-base'>Payment Partners</h3>
-        <div></div>
+        <div>
+          <div className='flex gap-3 ms-2'>
+               <FaAmazonPay className="text-3xl text-blue-600" />     
+               <FaCcAmex className="text-3xl text-blue-900" />       
+               <FaCcMastercard className="text-3xl text-red-600" />   
+               <FaPaypal className="text-3xl text-blue-500" />  
+            </div>
         </div>
-        <div className='flex justify-between items-center text-center md:text-right'>
-        <h3 className='font-light text-base'>Get deliveries with FreshCart</h3>
+        </div>
+        <div className='flex flex-col md:flex-row justify-between items-center text-center md:text-right'>
+        <h3 className='font-light text-base me-2'>Get deliveries with FreshCart</h3>
+       <div className='flex flex-row'>
+          <div className='bg-black text-white me-2 flex items-center px-2  rounded-md'>
+            <FaApple className="text-xl me-2" /> 
+            <div className='text-start'>
+               <p className="text-[9px] pt-1">Available on the</p>
+               <p className="text-sm font-semibold">App Store</p>
+            </div>
+         </div>
+        
+        <div className='bg-black text-white flex items-center px-2 rounded-md'>
+           <FaGooglePlay className="text-xl text-blue-400 me-2" />
+            <div className='text-start'>
+               <p className="text-[9px] pt-1">GET IT ON</p>
+               <p className="text-sm font-semibold">Google Play</p>
+            </div>
+        </div>
+       </div>
 
         </div>
       </div>
@@ -37,14 +62,3 @@ export default function Footer() {
     </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
