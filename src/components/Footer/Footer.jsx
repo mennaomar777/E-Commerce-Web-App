@@ -10,11 +10,10 @@ export default function Footer() {
       <p className='text-slate-500 text-sm mb-4'>We will send you a link, open it on your phone to download the app</p>
       <div className='flex flex-col sm:flex-row sm:items-center sm:gap-4 my-4 justify-between'>
       <div className="relative w-full sm:w-[80%] mb-3 sm:mb-0">
-        <input type="email" id="email" placeholder="Enter Your Email "className=" w-full p-3 rounded-xl border border-gray-300 shadow-sm text-gray-700 placeholder-gray-400 transition duration-300 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent hover:shadow-md"
+        <input type="email" id="email" placeholder="Enter Your Email "className=" w-full p-3 rounded-xl border border-gray-300 shadow-sm text-black placeholder-gray-400 transition duration-300 ease-in-out focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-transparent hover:shadow-md"
         />
      </div>
 
-        
         <div className=''>
            <button className='bg-green-500 text-white rounded px-4 py-1 w-full sm:w-auto text-center cursor-pointer hover:bg-green-600 transition'>ShareApp Link</button>
         </div>
@@ -63,3 +62,5 @@ export default function Footer() {
     </>
   )
 }
+
+
