@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './AllOrders.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FadeLoader } from 'react-spinners';
 
 
@@ -9,7 +9,17 @@ import { FadeLoader } from 'react-spinners';
 export default function AllOrders() {
       const [isLoading, setIsLoading] = useState(false);
       const [message, setMessage] = useState(null);
-      const navigate = useNavigate();
+
+      useEffect(() => {
+      setIsLoading(true);
+
+  const timer = setTimeout(() => {
+    setIsLoading(false);
+  }, 2000);
+
+  return () => clearTimeout(timer);
+}, []);
+
   
   return (
     <>
