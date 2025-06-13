@@ -33,7 +33,7 @@ export default function ForgetPassword() {
   return (
     <>
       {isLoading && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex justify-center items-center">
+        <div className="w-full flex justify-center items-center bg-white bg-opacity-70 min-h-[70vh]">
           <FadeLoader color="green" />
         </div>
       )}
