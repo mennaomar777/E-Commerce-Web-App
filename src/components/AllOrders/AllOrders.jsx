@@ -7,28 +7,10 @@ import { FadeLoader } from 'react-spinners';
 
 
 export default function AllOrders() {
-      const [isLoading, setIsLoading] = useState(false);
       const [message, setMessage] = useState(null);
 
-      useEffect(() => {
-      setIsLoading(true);
-
-  const timer = setTimeout(() => {
-    setIsLoading(false);
-  }, 2000);
-
-  return () => clearTimeout(timer);
-}, []);
-
-  
   return (
     <>
-       {isLoading && (
-         <div className="w-full flex justify-center items-center bg-white bg-opacity-70 min-h-[70vh]">
-           <FadeLoader color="green" />
-         </div>
-       )}
-   
        <div className="max-h-screen flex justify-center items-center py-4 my-5">
          <div className="bg-white p-8 rounded-lg w-[350px] mx-4 max-w-md sm:max-w-md md:max-w-lg lg:max-w-xl border border-gray-200 shadow-lg mt-10">
            <div className="text-center">
