@@ -37,7 +37,7 @@ const x = createBrowserRouter([
     {path:'Products',element:<ProtectedRoute><Products/></ProtectedRoute>},
     {path:'ProductDetails/:id/:category',element:<ProtectedRoute><ProductDetails/></ProtectedRoute>},
     {path:'Payment',element:<ProtectedRoute><Payment/></ProtectedRoute>},
-    {path:'AllOrders',element:<ProtectedRoute><AllOrders/></ProtectedRoute>},
+    { path: 'allorders', element: <ProtectedRoute><AllOrders /></ProtectedRoute> },
     {path:'Login',element:<Login/>},
     {path:'Register',element:<Register/>},
     {path:'ForgetPassword',element:<ForgetPassword/>},
