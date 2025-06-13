@@ -66,13 +66,14 @@ export default function Categories() {
      getAllCategories();
    }, [])
 
-   if (isCategoriesLoading || isSubCategoriesLoading) {
-    return (
-      <div className='fixed inset-0 flex justify-center items-center bg-black/50 z-50'>
-         <FadeLoader color='green' />
-      </div>
-    );
-  }
+ if (isCategoriesLoading) {
+  return (
+    <div className="w-full flex justify-center items-center bg-white bg-opacity-70 min-h-[70vh]">
+      <FadeLoader color="green" />
+    </div>
+  );
+}
+
   
 
   return (
@@ -96,36 +97,36 @@ export default function Categories() {
       </div>
 
       {/* subCategories */}
-      {subCategories &&(
-        <div>
-          <h2 className='text-center text-3xl text-green-600 my-2'>{selectedCategory?.name} subcategories</h2>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-5 items-start my-5'>
-  {isSubCategoriesLoading ? (
-    <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50">
-      <FadeLoader color='green' />
-    </div>
-  ) : (
-    subCategories?.map((subCategory) => (
-      <div
-        key={subCategory._id}
-        onClick={() => {
-          getSpecificSubCategories(subCategory._id);
-        }}
-        className='cursor-pointer text-center border border-gray-200 py-4 rounded-md px-4 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500'
-      >
-        <h3 className='font-semibold text-2xl'>{subCategory.name}</h3>
-      </div>
-    ))
-  )}
-      </div>
+     {isSubCategoriesLoading || subCategories ? (
+  <div>
+    <h2 className='text-center text-3xl text-green-600 my-2'>{selectedCategory?.name} subcategories</h2>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-5 items-start my-5'>
+      {isSubCategoriesLoading ? (
+        <div className="fixed inset-0 flex justify-center items-center bg-white bg-opacity-70 z-40" style={{ top: '60px' }}>
+          <FadeLoader color="green" />
         </div>
+      ) : (
+        subCategories?.map((subCategory) => (
+          <div
+            key={subCategory._id}
+            onClick={() => getSpecificSubCategories(subCategory._id)}
+            className='cursor-pointer text-center border border-gray-200 py-4 rounded-md px-4 hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.5)] transition-shadow duration-500'
+          >
+            <h3 className='font-semibold text-2xl'>{subCategory.name}</h3>
+          </div>
+        ))
       )}
+    </div>
+  </div>
+) : null}
+
 
 {isSpecificSubCategoryLoading && (
-  <div className='fixed inset-0 flex justify-center items-center bg-black/50 z-50'>
-    <FadeLoader color='green' />
+  <div className=" flex justify-center items-center bg-white bg-opacity-50 z-50">
+    <FadeLoader color="green" />
   </div>
 )}
+
 
 {/* Modal */}
 {isSubCategoryModalOpen && specificSubCategories && (
