@@ -104,7 +104,7 @@ export default function Cart() {
   if (isLoading) {
     return (
       <>
-        <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50">
+        <div className="w-full flex justify-center items-center bg-white bg-opacity-70 min-h-[70vh]">
           <FadeLoader color="green" />
         </div>
       </>
