@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FadeLoader } from 'react-spinners';
 
@@ -17,28 +17,28 @@ export default function ForgetPassword() {
         'https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords',
         { email }
       );
+
       localStorage.setItem('email', email);
       setMessage('A reset link has been sent to your email.');
+
       setTimeout(() => {
         navigate('/VerifyCode');
-      }, 2000);
+        setIsLoading(false);
+      }, 1500);
     } catch (error) {
       console.error('Error:', error);
       setMessage('Something went wrong. Please try again.');
-    } finally {
       setIsLoading(false);
     }
   }
 
   return (
-    <>
-      {isLoading && (
-        <div className="w-full flex justify-center items-center bg-white bg-opacity-70 min-h-[70vh]">
+    <div className="min-h-screen flex justify-center items-center py-6 px-4 bg-gray-50">
+      {isLoading ? (
+        <div className="flex justify-center items-center min-h-[300px]">
           <FadeLoader color="green" />
         </div>
-      )}
-
-      <div className="min-h-screen flex justify-center items-center py-6 px-4 bg-gray-50">
+      ) : (
         <div className="bg-white p-6 sm:p-8 rounded-lg w-[350px] max-w-md sm:max-w-lg border border-gray-200 shadow-lg mt-10">
           <div className="text-center">
             <div className="inline-flex justify-center items-center w-12 h-12 rounded-full bg-green-200 mb-4">
@@ -92,7 +92,7 @@ export default function ForgetPassword() {
             </Link>
           </div>
         </div>
-      </div>
-    </>
+      )}
+    </div>
   );
 }
