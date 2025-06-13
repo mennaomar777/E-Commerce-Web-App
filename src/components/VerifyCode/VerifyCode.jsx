@@ -17,24 +17,22 @@ export default function VerifyCode() {
       setMessage(res.data.message);
       setTimeout(() => {
         navigate('/ResetPass');
-      }, 2000);
+        setIsLoading(false);
+      }, 1000);
     } catch (error) {
       console.error('Error:', error);
       setMessage('Something went wrong. Please try again.');
-    } finally {
       setIsLoading(false);
     }
   }
 
   return (
-    <>
-      {isLoading && (
-        <div className="w-full flex justify-center items-center bg-white bg-opacity-70 min-h-[70vh]">
+    <div className="min-h-screen flex justify-center items-center py-6 px-4 bg-gray-50">
+      {isLoading ? (
+        <div className="flex justify-center items-center min-h-[300px]">
           <FadeLoader color="green" />
         </div>
-      )}
-
-      <div className="min-h-screen flex justify-center items-center py-6 px-4 bg-gray-50">
+      ) : (
         <div className="bg-white p-6 sm:p-8 rounded-lg w-[350px] max-w-md sm:max-w-lg border border-gray-200 shadow-lg mt-10">
           <div className="text-center">
             <div className="inline-flex justify-center items-center w-12 h-12 rounded-full bg-green-200 mb-4">
@@ -88,7 +86,7 @@ export default function VerifyCode() {
             </Link>
           </div>
         </div>
-      </div>
-    </>
+      )}
+    </div>
   );
 }
