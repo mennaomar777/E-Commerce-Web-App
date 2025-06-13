@@ -16,7 +16,7 @@ export default function Payment() {
   async function handleCachPayment(apiObj){
    await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/${cartId}`,{apiObj},{headers:{token}})
    .then((res)=>{
-    navigate('/AllOrders')
+    navigate('/allorders')
     return res
    })
    .catch((err) => err)
