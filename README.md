@@ -30,12 +30,12 @@ It includes secure authentication, a dynamic shopping cart, product search, wish
 📌 Learning Outcomes
 This project helped me:
 
-Handle protected routes and maintain user sessions
+- Handle protected routes and maintain user sessions
 
-Optimize UX and error handling
+- Optimize UX and error handling
 
-Manage global state efficiently with Context API + React Query
+- Manage global state efficiently with Context API + React Query
 
-Work with responsive design principles using Tailwind CSS
+- Work with responsive design principles using Tailwind CSS
 
 
