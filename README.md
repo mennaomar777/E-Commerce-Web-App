@@ -27,8 +27,8 @@ It includes secure authentication, a dynamic shopping cart, product search, wish
 - **UI Enhancements:** React Hot Toast, FontAwesome, React Slick, React Icons  
 
 ---
-📌 Learning Outcomes
-This project helped me:
+## 📌 Learning Outcomes
+**This project helped me:**
 
 - Handle protected routes and maintain user sessions
 
